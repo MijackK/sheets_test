@@ -3,11 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>webpack starter config</title>
+    <title>Tailor App</title>
     <script src="index.bundle.js" defer></script>
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+    <script async defer src="https://accounts.google.com/gsi/client"></script>
+
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>webpack to starter config</h1>
+    <nav>
+      <h1>Tailor App</h1>
+
+      <div id="action-buttons">
+        <input id="search" placeholder="search" />
+        <button id="add-open">Create</button>
+        <button id="authorize_button">Login</button>
+        <button id="signout_button">logout</button>
+      </div>
+    </nav>
+
+    <dialog id="add-dialog">
+      <button id="close-modal" type="button">Close</button>
+      <form id="add" method="dialog" open>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" required />
+
+        <label for="height">Height:</label>
+        <input type="number" id="height" name="height" min="1" required />
+
+        <label for="waist">Waist:</label>
+        <input type="number" id="waist" name="waist" min="1" required />
+
+        <label for="hip">Hip:</label>
+        <input type="number" id="hip" name="hip" min="1" required />
+
+        <label for="arm-length">Arm Length:</label>
+        <input
+          type="number"
+          id="arm-length"
+          min="1"
+          name="arm-length"
+          required
+        />
+
+        <label for="chest">Chest:</label>
+        <input type="number" id="chest" min="1" name="chest" required />
+
+        <button type="submit">Submit</button>
+      </form>
+    </dialog>
+
+    <ul id="content"></ul>
   </body>
 </html>

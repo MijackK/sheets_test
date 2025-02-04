@@ -1,3 +1,153 @@
 h1 {
-  color: green;
+  color: rgb(71, 71, 71);
+  font-size: 2rem;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: solid thin black;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 1px;
+  background-color: white;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+nav button {
+  background-color: rgb(28, 28, 100);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+#search {
+  border: none;
+  border-bottom: solid thin black;
+  min-width: 300px;
+  height: 30px;
+}
+#content {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 0;
+  max-width: 1920px;
+  margin: auto;
+}
+#content li {
+  border: solid thin rgba(128, 128, 128, 0.637);
+  padding: 20px;
+  width: 70%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.measurement-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.measurement-value {
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+.measurement-label {
+  color: gray;
+  cursor: pointer;
+  padding: 5px;
+}
+.measurement-label:hover {
+  background-color: aliceblue;
+}
+.section-two {
+  display: flex;
+  justify-content: space-around;
+
+  flex-wrap: wrap;
+}
+.name {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: rgb(28, 28, 100);
+}
+.contact {
+  color: gray;
+  margin-bottom: 10px;
+
+  font-size: 1.1rem;
+}
+.section-one {
+  display: flex;
+  justify-content: space-between;
+}
+.section-one > button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  color: rgb(71, 71, 71);
+}
+.section-one > button:hover {
+  color: tomato;
+}
+
+form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 300px;
+  width: 50dvw;
+  max-width: 500px;
+}
+form > button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+form > input {
+  border: none;
+  border-bottom: solid;
+  height: 30px;
+  background-color: whitesmoke;
+  border-width: thin;
+}
+form > label {
+  font-size: 1.1rem;
+}
+#close-modal {
+  background-color: rgb(22, 22, 22);
+  border: none;
+  color: whitesmoke;
+  padding: 10px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.edit-container > button {
+}
+
+::backdrop {
+  background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.75;
 }
