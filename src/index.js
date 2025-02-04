@@ -23,7 +23,7 @@ let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
-let stored = [];
+const stored = [];
 
 const dialog = document.querySelector("#add-dialog");
 document.getElementById("authorize_button").style.display = "none";
