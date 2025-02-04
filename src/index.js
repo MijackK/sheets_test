@@ -195,13 +195,19 @@ async function deleteRow(row) {
 }
 
 async function editCell(row, column, values) {
-  const response = await window.gapi.client.sheets.spreadsheets.values.update({
-    spreadsheetId: SHEET_ID,
-    range: `Sheet1!${column}${row}:${column}${row}`,
-    majorDimension: "ROWS",
-    valueInputOption: "USER_ENTERED",
-    values: [values],
-  });
+  let response;
+  try {
+    response = await window.gapi.client.sheets.spreadsheets.values.update({
+      spreadsheetId: SHEET_ID,
+      range: `Sheet1!${column}${row}:${column}${row}`,
+      majorDimension: "ROWS",
+      valueInputOption: "USER_ENTERED",
+      values: [values],
+    });
+  } catch (err) {
+    shouldLogOut(err.status);
+  }
+
   return response;
 }
 
@@ -243,15 +249,26 @@ function addMeasurements({ row, id }) {
     }
   );
 }
+function shouldLogOut(status) {
+  if (status === 401) handleSignoutClick();
+}
 
 async function addRow(measure) {
-  const response = await window.gapi.client.sheets.spreadsheets.values.append({
-    spreadsheetId: SHEET_ID,
-    range: "Sheet1!A1:G1",
-    majorDimension: "ROWS",
-    valueInputOption: "USER_ENTERED",
-    values: [measure],
-  });
+  let response;
+  try {
+    response = await window.gapi.client.sheets.spreadsheets.values.append({
+      spreadsheetId: SHEET_ID,
+      range: "Sheet1!A1:G1",
+      majorDimension: "ROWS",
+      valueInputOption: "USER_ENTERED",
+      values: [measure],
+    });
+  } catch (err) {
+    console.log(err);
+    shouldLogOut(err.status);
+    throw new Error("unable to add row");
+  }
+
   return response;
 }
 
@@ -265,7 +282,8 @@ async function listMajors() {
       range: "A2:G",
     });
   } catch (err) {
-    document.getElementById("content").innerText = err.message;
+    shouldLogOut(err.status);
+
     return;
   }
   const range = response.result;
@@ -296,7 +314,7 @@ document.querySelector("#add").addEventListener("submit", (e) => {
 
       console.log(res);
 
-      const rowObject = { id: stored.length - 1, row: measurements };
+      const rowObject = { id: stored.length, row: measurements };
 
       stored.push(rowObject);
       addMeasurements(rowObject);
