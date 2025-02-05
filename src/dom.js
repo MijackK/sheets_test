@@ -47,7 +47,7 @@ export function listMeasurements(info) {
     editContainer.classList.add("edit-container");
     const edit = document.createElement("input");
     const closeButton = document.createElement("button");
-    closeButton.textContent = "X";
+    closeButton.textContent = "Close";
     editContainer.append(edit, closeButton);
     editContainer.style.display = "none";
 
