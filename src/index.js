@@ -11,7 +11,7 @@ const API_KEY = "AIzaSyDjABbFTBdOenG98_YZvT_7Yc2u-xEQNCc";
 const DISCOVERY_DOC =
   "https://sheets.googleapis.com/$discovery/rest?version=v4";
 
-const SHEET_ID = "1dagXqdYsLisYCZG0eUxRWG0kHhxYKuKbgBb6TcisNjc";
+const SHEET_ID = "1lXZkLZwbjgINrK53zXMaDxMGVthg5gqESqNoZfqjq0c";
 
 const ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
