@@ -168,7 +168,7 @@ function handleSignoutClick() {
     document.getElementById("authorize_button").style.display = "inline-block";
 
     document.getElementById("signout_button").style.display = "none";
-    document.getElementById("add-open").style.visibility = "";
+    document.getElementById("add-open").style.visibility = "hidden";
   }
 }
 document.getElementById("signout_button").addEventListener("click", () => {
